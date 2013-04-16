@@ -4,25 +4,25 @@ part of adexchangebuyer_v1_api_client;
 class Account {
 
   /** Your bidder locations that have distinct URLs. */
-  List<AccountBidderLocation> bidderLocation;
+  core.List<AccountBidderLocation> bidderLocation;
 
   /** The nid parameter value used in cookie match requests. Please contact your technical account manager if you need to change this. */
-  String cookieMatchingNid;
+  core.String cookieMatchingNid;
 
   /** The base URL used in cookie match requests. */
-  String cookieMatchingUrl;
+  core.String cookieMatchingUrl;
 
   /** Account id. */
-  int id;
+  core.int id;
 
   /** Resource type. */
-  String kind;
+  core.String kind;
 
   /** The sum of all bidderLocation.maximumQps values cannot exceed this. Please contact your technical account manager if you need to change this. */
-  int maximumTotalQps;
+  core.int maximumTotalQps;
 
   /** Create new Account from JSON data */
-  Account.fromJson(Map json) {
+  Account.fromJson(core.Map json) {
     if (json.containsKey("bidderLocation")) {
       bidderLocation = [];
       json["bidderLocation"].forEach((item) {
@@ -47,11 +47,11 @@ class Account {
   }
 
   /** Create JSON Object for Account */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (bidderLocation != null) {
-      output["bidderLocation"] = new List();
+      output["bidderLocation"] = new core.List();
       bidderLocation.forEach((item) {
         output["bidderLocation"].add(item.toJson());
       });
@@ -76,20 +76,20 @@ class Account {
   }
 
   /** Return String representation of Account */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
 class AccountBidderLocation {
 
   /** The maximum queries per second the Ad Exchange will send. */
-  int maximumQps;
+  core.int maximumQps;
 
   /** The URL to which the Ad Exchange will send bid requests. */
-  String url;
+  core.String url;
 
   /** Create new AccountBidderLocation from JSON data */
-  AccountBidderLocation.fromJson(Map json) {
+  AccountBidderLocation.fromJson(core.Map json) {
     if (json.containsKey("maximumQps")) {
       maximumQps = json["maximumQps"];
     }
@@ -99,8 +99,8 @@ class AccountBidderLocation {
   }
 
   /** Create JSON Object for AccountBidderLocation */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (maximumQps != null) {
       output["maximumQps"] = maximumQps;
@@ -113,7 +113,7 @@ class AccountBidderLocation {
   }
 
   /** Return String representation of AccountBidderLocation */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -121,13 +121,13 @@ class AccountBidderLocation {
 class AccountsList {
 
   /** A list of accounts. */
-  List<Account> items;
+  core.List<Account> items;
 
   /** Resource type. */
-  String kind;
+  core.String kind;
 
   /** Create new AccountsList from JSON data */
-  AccountsList.fromJson(Map json) {
+  AccountsList.fromJson(core.Map json) {
     if (json.containsKey("items")) {
       items = [];
       json["items"].forEach((item) {
@@ -140,11 +140,11 @@ class AccountsList {
   }
 
   /** Create JSON Object for AccountsList */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (items != null) {
-      output["items"] = new List();
+      output["items"] = new core.List();
       items.forEach((item) {
         output["items"].add(item.toJson());
       });
@@ -157,7 +157,7 @@ class AccountsList {
   }
 
   /** Return String representation of AccountsList */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -165,58 +165,58 @@ class AccountsList {
 class Creative {
 
   /** The HTML snippet that displays the ad when inserted in the web page. If set, videoURL should not be set. */
-  String HTMLSnippet;
+  core.String HTMLSnippet;
 
   /** Account id. */
-  int accountId;
+  core.int accountId;
 
   /** The pretargeting adgroup id that this creative will be associated with. */
-  String adgroupId;
+  core.String adgroupId;
 
   /** Detected advertiser id, if any. Read-only. This field should not be set in requests. */
-  List<String> advertiserId;
+  core.List<core.String> advertiserId;
 
   /** The name of the company being advertised in the creative. */
-  String advertiserName;
+  core.String advertiserName;
 
   /** All attributes for the ads that may be shown from this snippet. */
-  List<int> attribute;
+  core.List<core.int> attribute;
 
   /** A buyer-specific id identifying the creative in this ad. */
-  String buyerCreativeId;
+  core.String buyerCreativeId;
 
   /** The set of destination urls for the snippet. */
-  List<String> clickThroughUrl;
+  core.List<core.String> clickThroughUrl;
 
   /** The reason for disapproval, if any. Note that not all disapproval reasons may be categorized, so it is possible for the creative to have a status of DISAPPROVED with an empty list for disapproval_reasons. In this case, please reach out to your TAM to help debug the issue. Read-only. This field should not be set in requests. */
-  List<String> disapprovalReasons;
+  core.List<core.String> disapprovalReasons;
 
   /** Ad height. */
-  int height;
+  core.int height;
 
   /** Resource type. */
-  String kind;
+  core.String kind;
 
   /** Detected product categories, if any. Read-only. This field should not be set in requests. */
-  List<int> productCategories;
+  core.List<core.int> productCategories;
 
   /** Detected sensitive categories, if any. Read-only. This field should not be set in requests. */
-  List<int> sensitiveCategories;
+  core.List<core.int> sensitiveCategories;
 
   /** Creative serving status. Read-only. This field should not be set in requests. */
-  String status;
+  core.String status;
 
   /** All vendor types for the ads that may be shown from this snippet. */
-  List<int> vendorType;
+  core.List<core.int> vendorType;
 
   /** The url to fetch a video ad. If set, HTMLSnippet should not be set. */
-  String videoURL;
+  core.String videoURL;
 
   /** Ad width. */
-  int width;
+  core.int width;
 
   /** Create new Creative from JSON data */
-  Creative.fromJson(Map json) {
+  Creative.fromJson(core.Map json) {
     if (json.containsKey("HTMLSnippet")) {
       HTMLSnippet = json["HTMLSnippet"];
     }
@@ -292,8 +292,8 @@ class Creative {
   }
 
   /** Create JSON Object for Creative */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (HTMLSnippet != null) {
       output["HTMLSnippet"] = HTMLSnippet;
@@ -305,7 +305,7 @@ class Creative {
       output["adgroupId"] = adgroupId;
     }
     if (advertiserId != null) {
-      output["advertiserId"] = new List();
+      output["advertiserId"] = new core.List();
       advertiserId.forEach((item) {
         output["advertiserId"].add(item);
       });
@@ -314,7 +314,7 @@ class Creative {
       output["advertiserName"] = advertiserName;
     }
     if (attribute != null) {
-      output["attribute"] = new List();
+      output["attribute"] = new core.List();
       attribute.forEach((item) {
         output["attribute"].add(item);
       });
@@ -323,13 +323,13 @@ class Creative {
       output["buyerCreativeId"] = buyerCreativeId;
     }
     if (clickThroughUrl != null) {
-      output["clickThroughUrl"] = new List();
+      output["clickThroughUrl"] = new core.List();
       clickThroughUrl.forEach((item) {
         output["clickThroughUrl"].add(item);
       });
     }
     if (disapprovalReasons != null) {
-      output["disapprovalReasons"] = new List();
+      output["disapprovalReasons"] = new core.List();
       disapprovalReasons.forEach((item) {
         output["disapprovalReasons"].add(item);
       });
@@ -341,13 +341,13 @@ class Creative {
       output["kind"] = kind;
     }
     if (productCategories != null) {
-      output["productCategories"] = new List();
+      output["productCategories"] = new core.List();
       productCategories.forEach((item) {
         output["productCategories"].add(item);
       });
     }
     if (sensitiveCategories != null) {
-      output["sensitiveCategories"] = new List();
+      output["sensitiveCategories"] = new core.List();
       sensitiveCategories.forEach((item) {
         output["sensitiveCategories"].add(item);
       });
@@ -356,7 +356,7 @@ class Creative {
       output["status"] = status;
     }
     if (vendorType != null) {
-      output["vendorType"] = new List();
+      output["vendorType"] = new core.List();
       vendorType.forEach((item) {
         output["vendorType"].add(item);
       });
@@ -372,7 +372,7 @@ class Creative {
   }
 
   /** Return String representation of Creative */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -380,16 +380,16 @@ class Creative {
 class CreativesList {
 
   /** A list of creatives. */
-  List<Creative> items;
+  core.List<Creative> items;
 
   /** Resource type. */
-  String kind;
+  core.String kind;
 
   /** Continuation token used to page through creatives. To retrieve the next page of results, set the next request's "pageToken" value to this. */
-  String nextPageToken;
+  core.String nextPageToken;
 
   /** Create new CreativesList from JSON data */
-  CreativesList.fromJson(Map json) {
+  CreativesList.fromJson(core.Map json) {
     if (json.containsKey("items")) {
       items = [];
       json["items"].forEach((item) {
@@ -405,11 +405,11 @@ class CreativesList {
   }
 
   /** Create JSON Object for CreativesList */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (items != null) {
-      output["items"] = new List();
+      output["items"] = new core.List();
       items.forEach((item) {
         output["items"].add(item.toJson());
       });
@@ -425,7 +425,7 @@ class CreativesList {
   }
 
   /** Return String representation of CreativesList */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -433,34 +433,34 @@ class CreativesList {
 class DirectDeal {
 
   /** The account id of the buyer this deal is for. */
-  int accountId;
+  core.int accountId;
 
   /** The name of the advertiser this deal is for. */
-  String advertiser;
+  core.String advertiser;
 
   /** The currency code that applies to the fixed_cpm value. If not set then assumed to be USD. */
-  String currencyCode;
+  core.String currencyCode;
 
   /** End time for when this deal stops being active. If not set then this deal is valid until manually disabled by the publisher. In seconds since the epoch. */
-  String endTime;
+  core.String endTime;
 
   /** The fixed price for this direct deal. In cpm micros of currency according to currency_code. */
-  String fixedCpm;
+  core.String fixedCpm;
 
   /** Deal id. */
-  String id;
+  core.String id;
 
   /** Resource type. */
-  String kind;
+  core.String kind;
 
   /** The name of the publisher offering this direct deal. */
-  String sellerNetwork;
+  core.String sellerNetwork;
 
   /** Start time for when this deal becomes active. If not set then this deal is active immediately upon creation. In seconds since the epoch. */
-  String startTime;
+  core.String startTime;
 
   /** Create new DirectDeal from JSON data */
-  DirectDeal.fromJson(Map json) {
+  DirectDeal.fromJson(core.Map json) {
     if (json.containsKey("accountId")) {
       accountId = json["accountId"];
     }
@@ -491,8 +491,8 @@ class DirectDeal {
   }
 
   /** Create JSON Object for DirectDeal */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (accountId != null) {
       output["accountId"] = accountId;
@@ -526,7 +526,7 @@ class DirectDeal {
   }
 
   /** Return String representation of DirectDeal */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -534,13 +534,13 @@ class DirectDeal {
 class DirectDealsList {
 
   /** A list of direct deals relevant for your account. */
-  List<DirectDeal> directDeals;
+  core.List<DirectDeal> directDeals;
 
   /** Resource type. */
-  String kind;
+  core.String kind;
 
   /** Create new DirectDealsList from JSON data */
-  DirectDealsList.fromJson(Map json) {
+  DirectDealsList.fromJson(core.Map json) {
     if (json.containsKey("directDeals")) {
       directDeals = [];
       json["directDeals"].forEach((item) {
@@ -553,11 +553,11 @@ class DirectDealsList {
   }
 
   /** Create JSON Object for DirectDealsList */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (directDeals != null) {
-      output["directDeals"] = new List();
+      output["directDeals"] = new core.List();
       directDeals.forEach((item) {
         output["directDeals"].add(item.toJson());
       });
@@ -570,7 +570,7 @@ class DirectDealsList {
   }
 
   /** Return String representation of DirectDealsList */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 

@@ -1,8 +1,8 @@
 part of adexchangebuyer_v1_api_client;
 
-class AccountsResource extends Resource {
+class AccountsResource_ extends Resource {
 
-  AccountsResource(Client client) : super(client) {
+  AccountsResource_(Client client) : super(client) {
   }
 
   /**
@@ -30,7 +30,7 @@ class AccountsResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
@@ -63,7 +63,7 @@ class AccountsResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
@@ -102,7 +102,7 @@ class AccountsResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
@@ -141,7 +141,7 @@ class AccountsResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
@@ -154,9 +154,9 @@ class AccountsResource extends Resource {
   }
 }
 
-class CreativesResource extends Resource {
+class CreativesResource_ extends Resource {
 
-  CreativesResource(Client client) : super(client) {
+  CreativesResource_(Client client) : super(client) {
   }
 
   /**
@@ -192,7 +192,7 @@ class CreativesResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
@@ -227,7 +227,7 @@ class CreativesResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
@@ -268,7 +268,7 @@ class CreativesResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
@@ -281,9 +281,9 @@ class CreativesResource extends Resource {
   }
 }
 
-class DirectDealsResource extends Resource {
+class DirectDealsResource_ extends Resource {
 
-  DirectDealsResource(Client client) : super(client) {
+  DirectDealsResource_(Client client) : super(client) {
   }
 
   /**
@@ -311,7 +311,7 @@ class DirectDealsResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
@@ -344,7 +344,7 @@ class DirectDealsResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 

@@ -4,12 +4,12 @@ part of adexchangebuyer_v1_api_browser;
 /** Lets you manage your Ad Exchange Buyer account. */
 class Adexchangebuyer extends BrowserClient {
 
-  AccountsResource _accounts;
-  AccountsResource get accounts => _accounts;
-  CreativesResource _creatives;
-  CreativesResource get creatives => _creatives;
-  DirectDealsResource _directDeals;
-  DirectDealsResource get directDeals => _directDeals;
+  AccountsResource_ _accounts;
+  AccountsResource_ get accounts => _accounts;
+  CreativesResource_ _creatives;
+  CreativesResource_ get creatives => _creatives;
+  DirectDealsResource_ _directDeals;
+  DirectDealsResource_ get directDeals => _directDeals;
 
   /** OAuth Scope2: Manage your Ad Exchange buyer account configuration */
   static const core.String ADEXCHANGE_BUYER_SCOPE = "https://www.googleapis.com/auth/adexchange.buyer";
@@ -66,8 +66,8 @@ class Adexchangebuyer extends BrowserClient {
   Adexchangebuyer([oauth.OAuth2 auth]) : super(auth) {
     basePath = "/adexchangebuyer/v1/";
     rootUrl = "https://www.googleapis.com:443/";
-    _accounts = new AccountsResource(this);
-    _creatives = new CreativesResource(this);
-    _directDeals = new DirectDealsResource(this);
+    _accounts = new AccountsResource_(this);
+    _creatives = new CreativesResource_(this);
+    _directDeals = new DirectDealsResource_(this);
   }
 }

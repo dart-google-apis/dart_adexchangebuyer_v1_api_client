@@ -170,7 +170,7 @@ class CreativesResource_ extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  async.Future<Creative> get(core.int accountId, core.String buyerCreativeId, core.String adgroupId, {core.Map optParams}) {
+  async.Future<Creative> get(core.int accountId, core.String buyerCreativeId, core.int adgroupId, {core.Map optParams}) {
     var completer = new async.Completer();
     var url = "creatives/{accountId}/{buyerCreativeId}";
     var urlParams = new core.Map();
@@ -293,7 +293,7 @@ class DirectDealsResource_ extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  async.Future<DirectDeal> get(core.String id, {core.Map optParams}) {
+  async.Future<DirectDeal> get(core.int id, {core.Map optParams}) {
     var completer = new async.Completer();
     var url = "directdeals/{id}";
     var urlParams = new core.Map();

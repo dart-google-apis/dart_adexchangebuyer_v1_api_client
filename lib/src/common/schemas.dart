@@ -171,10 +171,10 @@ class Creative {
   core.int accountId;
 
   /** The pretargeting adgroup id that this creative will be associated with. */
-  core.String adgroupId;
+  core.int adgroupId;
 
   /** Detected advertiser id, if any. Read-only. This field should not be set in requests. */
-  core.List<core.String> advertiserId;
+  core.List<core.int> advertiserId;
 
   /** The name of the company being advertised in the creative. */
   core.String advertiserName;
@@ -442,13 +442,13 @@ class DirectDeal {
   core.String currencyCode;
 
   /** End time for when this deal stops being active. If not set then this deal is valid until manually disabled by the publisher. In seconds since the epoch. */
-  core.String endTime;
+  core.int endTime;
 
   /** The fixed price for this direct deal. In cpm micros of currency according to currency_code. */
-  core.String fixedCpm;
+  core.int fixedCpm;
 
   /** Deal id. */
-  core.String id;
+  core.int id;
 
   /** Resource type. */
   core.String kind;
@@ -457,7 +457,7 @@ class DirectDeal {
   core.String sellerNetwork;
 
   /** Start time for when this deal becomes active. If not set then this deal is active immediately upon creation. In seconds since the epoch. */
-  core.String startTime;
+  core.int startTime;
 
   /** Create new DirectDeal from JSON data */
   DirectDeal.fromJson(core.Map json) {

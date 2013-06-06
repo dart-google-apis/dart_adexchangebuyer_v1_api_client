@@ -65,7 +65,7 @@ class Adexchangebuyer extends ConsoleClient {
 
   Adexchangebuyer([oauth2.OAuth2Console auth]) : super(auth) {
     basePath = "/adexchangebuyer/v1/";
-    rootUrl = "https://www.googleapis.com:443/";
+    rootUrl = "https://www.googleapis.com/";
     _accounts = new AccountsResource_(this);
     _creatives = new CreativesResource_(this);
     _directDeals = new DirectDealsResource_(this);

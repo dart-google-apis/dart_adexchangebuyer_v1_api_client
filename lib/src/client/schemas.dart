@@ -224,7 +224,11 @@ class Creative {
       accountId = json["accountId"];
     }
     if (json.containsKey("adgroupId")) {
-      adgroupId = json["adgroupId"];
+      if(json["adgroupId"] is core.String){
+        adgroupId = core.int.parse(json["adgroupId"]);
+      }else{
+        adgroupId = json["adgroupId"];
+      }
     }
     if (json.containsKey("advertiserId")) {
       advertiserId = [];
@@ -471,13 +475,25 @@ class DirectDeal {
       currencyCode = json["currencyCode"];
     }
     if (json.containsKey("endTime")) {
-      endTime = json["endTime"];
+      if(json["endTime"] is core.String){
+        endTime = core.int.parse(json["endTime"]);
+      }else{
+        endTime = json["endTime"];
+      }
     }
     if (json.containsKey("fixedCpm")) {
-      fixedCpm = json["fixedCpm"];
+      if(json["fixedCpm"] is core.String){
+        fixedCpm = core.int.parse(json["fixedCpm"]);
+      }else{
+        fixedCpm = json["fixedCpm"];
+      }
     }
     if (json.containsKey("id")) {
-      id = json["id"];
+      if(json["id"] is core.String){
+        id = core.int.parse(json["id"]);
+      }else{
+        id = json["id"];
+      }
     }
     if (json.containsKey("kind")) {
       kind = json["kind"];
@@ -486,7 +502,11 @@ class DirectDeal {
       sellerNetwork = json["sellerNetwork"];
     }
     if (json.containsKey("startTime")) {
-      startTime = json["startTime"];
+      if(json["startTime"] is core.String){
+        startTime = core.int.parse(json["startTime"]);
+      }else{
+        startTime = json["startTime"];
+      }
     }
   }
 

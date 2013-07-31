@@ -1,4 +1,4 @@
-part of adexchangebuyer_v1_api_client;
+part of adexchangebuyer_v1_api;
 
 /** Configuration data for an Ad Exchange buyer account. */
 class Account {
@@ -24,10 +24,7 @@ class Account {
   /** Create new Account from JSON data */
   Account.fromJson(core.Map json) {
     if (json.containsKey("bidderLocation")) {
-      bidderLocation = [];
-      json["bidderLocation"].forEach((item) {
-        bidderLocation.add(new AccountBidderLocation.fromJson(item));
-      });
+      bidderLocation = json["bidderLocation"].map((bidderLocationItem) => new AccountBidderLocation.fromJson(bidderLocationItem)).toList();
     }
     if (json.containsKey("cookieMatchingNid")) {
       cookieMatchingNid = json["cookieMatchingNid"];
@@ -51,10 +48,7 @@ class Account {
     var output = new core.Map();
 
     if (bidderLocation != null) {
-      output["bidderLocation"] = new core.List();
-      bidderLocation.forEach((item) {
-        output["bidderLocation"].add(item.toJson());
-      });
+      output["bidderLocation"] = bidderLocation.map((bidderLocationItem) => bidderLocationItem.toJson()).toList();
     }
     if (cookieMatchingNid != null) {
       output["cookieMatchingNid"] = cookieMatchingNid;
@@ -129,10 +123,7 @@ class AccountsList {
   /** Create new AccountsList from JSON data */
   AccountsList.fromJson(core.Map json) {
     if (json.containsKey("items")) {
-      items = [];
-      json["items"].forEach((item) {
-        items.add(new Account.fromJson(item));
-      });
+      items = json["items"].map((itemsItem) => new Account.fromJson(itemsItem)).toList();
     }
     if (json.containsKey("kind")) {
       kind = json["kind"];
@@ -144,10 +135,7 @@ class AccountsList {
     var output = new core.Map();
 
     if (items != null) {
-      output["items"] = new core.List();
-      items.forEach((item) {
-        output["items"].add(item.toJson());
-      });
+      output["items"] = items.map((itemsItem) => itemsItem.toJson()).toList();
     }
     if (kind != null) {
       output["kind"] = kind;
@@ -224,41 +212,25 @@ class Creative {
       accountId = json["accountId"];
     }
     if (json.containsKey("adgroupId")) {
-      if(json["adgroupId"] is core.String){
-        adgroupId = core.int.parse(json["adgroupId"]);
-      }else{
-        adgroupId = json["adgroupId"];
-      }
+      adgroupId = (json["adgroupId"] is core.String) ? core.int.parse(json["adgroupId"]) : json["adgroupId"];
     }
     if (json.containsKey("advertiserId")) {
-      advertiserId = [];
-      json["advertiserId"].forEach((item) {
-        advertiserId.add(item);
-      });
+      advertiserId = json["advertiserId"].map((advertiserIdItem) => (advertiserIdItem is core.String) ? core.int.parse(advertiserIdItem) : advertiserIdItem).toList();
     }
     if (json.containsKey("advertiserName")) {
       advertiserName = json["advertiserName"];
     }
     if (json.containsKey("attribute")) {
-      attribute = [];
-      json["attribute"].forEach((item) {
-        attribute.add(item);
-      });
+      attribute = json["attribute"].toList();
     }
     if (json.containsKey("buyerCreativeId")) {
       buyerCreativeId = json["buyerCreativeId"];
     }
     if (json.containsKey("clickThroughUrl")) {
-      clickThroughUrl = [];
-      json["clickThroughUrl"].forEach((item) {
-        clickThroughUrl.add(item);
-      });
+      clickThroughUrl = json["clickThroughUrl"].toList();
     }
     if (json.containsKey("disapprovalReasons")) {
-      disapprovalReasons = [];
-      json["disapprovalReasons"].forEach((item) {
-        disapprovalReasons.add(item);
-      });
+      disapprovalReasons = json["disapprovalReasons"].toList();
     }
     if (json.containsKey("height")) {
       height = json["height"];
@@ -267,25 +239,16 @@ class Creative {
       kind = json["kind"];
     }
     if (json.containsKey("productCategories")) {
-      productCategories = [];
-      json["productCategories"].forEach((item) {
-        productCategories.add(item);
-      });
+      productCategories = json["productCategories"].toList();
     }
     if (json.containsKey("sensitiveCategories")) {
-      sensitiveCategories = [];
-      json["sensitiveCategories"].forEach((item) {
-        sensitiveCategories.add(item);
-      });
+      sensitiveCategories = json["sensitiveCategories"].toList();
     }
     if (json.containsKey("status")) {
       status = json["status"];
     }
     if (json.containsKey("vendorType")) {
-      vendorType = [];
-      json["vendorType"].forEach((item) {
-        vendorType.add(item);
-      });
+      vendorType = json["vendorType"].toList();
     }
     if (json.containsKey("videoURL")) {
       videoURL = json["videoURL"];
@@ -309,34 +272,22 @@ class Creative {
       output["adgroupId"] = adgroupId;
     }
     if (advertiserId != null) {
-      output["advertiserId"] = new core.List();
-      advertiserId.forEach((item) {
-        output["advertiserId"].add(item);
-      });
+      output["advertiserId"] = advertiserId.toList();
     }
     if (advertiserName != null) {
       output["advertiserName"] = advertiserName;
     }
     if (attribute != null) {
-      output["attribute"] = new core.List();
-      attribute.forEach((item) {
-        output["attribute"].add(item);
-      });
+      output["attribute"] = attribute.toList();
     }
     if (buyerCreativeId != null) {
       output["buyerCreativeId"] = buyerCreativeId;
     }
     if (clickThroughUrl != null) {
-      output["clickThroughUrl"] = new core.List();
-      clickThroughUrl.forEach((item) {
-        output["clickThroughUrl"].add(item);
-      });
+      output["clickThroughUrl"] = clickThroughUrl.toList();
     }
     if (disapprovalReasons != null) {
-      output["disapprovalReasons"] = new core.List();
-      disapprovalReasons.forEach((item) {
-        output["disapprovalReasons"].add(item);
-      });
+      output["disapprovalReasons"] = disapprovalReasons.toList();
     }
     if (height != null) {
       output["height"] = height;
@@ -345,25 +296,16 @@ class Creative {
       output["kind"] = kind;
     }
     if (productCategories != null) {
-      output["productCategories"] = new core.List();
-      productCategories.forEach((item) {
-        output["productCategories"].add(item);
-      });
+      output["productCategories"] = productCategories.toList();
     }
     if (sensitiveCategories != null) {
-      output["sensitiveCategories"] = new core.List();
-      sensitiveCategories.forEach((item) {
-        output["sensitiveCategories"].add(item);
-      });
+      output["sensitiveCategories"] = sensitiveCategories.toList();
     }
     if (status != null) {
       output["status"] = status;
     }
     if (vendorType != null) {
-      output["vendorType"] = new core.List();
-      vendorType.forEach((item) {
-        output["vendorType"].add(item);
-      });
+      output["vendorType"] = vendorType.toList();
     }
     if (videoURL != null) {
       output["videoURL"] = videoURL;
@@ -395,10 +337,7 @@ class CreativesList {
   /** Create new CreativesList from JSON data */
   CreativesList.fromJson(core.Map json) {
     if (json.containsKey("items")) {
-      items = [];
-      json["items"].forEach((item) {
-        items.add(new Creative.fromJson(item));
-      });
+      items = json["items"].map((itemsItem) => new Creative.fromJson(itemsItem)).toList();
     }
     if (json.containsKey("kind")) {
       kind = json["kind"];
@@ -413,10 +352,7 @@ class CreativesList {
     var output = new core.Map();
 
     if (items != null) {
-      output["items"] = new core.List();
-      items.forEach((item) {
-        output["items"].add(item.toJson());
-      });
+      output["items"] = items.map((itemsItem) => itemsItem.toJson()).toList();
     }
     if (kind != null) {
       output["kind"] = kind;
@@ -475,25 +411,13 @@ class DirectDeal {
       currencyCode = json["currencyCode"];
     }
     if (json.containsKey("endTime")) {
-      if(json["endTime"] is core.String){
-        endTime = core.int.parse(json["endTime"]);
-      }else{
-        endTime = json["endTime"];
-      }
+      endTime = (json["endTime"] is core.String) ? core.int.parse(json["endTime"]) : json["endTime"];
     }
     if (json.containsKey("fixedCpm")) {
-      if(json["fixedCpm"] is core.String){
-        fixedCpm = core.int.parse(json["fixedCpm"]);
-      }else{
-        fixedCpm = json["fixedCpm"];
-      }
+      fixedCpm = (json["fixedCpm"] is core.String) ? core.int.parse(json["fixedCpm"]) : json["fixedCpm"];
     }
     if (json.containsKey("id")) {
-      if(json["id"] is core.String){
-        id = core.int.parse(json["id"]);
-      }else{
-        id = json["id"];
-      }
+      id = (json["id"] is core.String) ? core.int.parse(json["id"]) : json["id"];
     }
     if (json.containsKey("kind")) {
       kind = json["kind"];
@@ -502,11 +426,7 @@ class DirectDeal {
       sellerNetwork = json["sellerNetwork"];
     }
     if (json.containsKey("startTime")) {
-      if(json["startTime"] is core.String){
-        startTime = core.int.parse(json["startTime"]);
-      }else{
-        startTime = json["startTime"];
-      }
+      startTime = (json["startTime"] is core.String) ? core.int.parse(json["startTime"]) : json["startTime"];
     }
   }
 
@@ -562,10 +482,7 @@ class DirectDealsList {
   /** Create new DirectDealsList from JSON data */
   DirectDealsList.fromJson(core.Map json) {
     if (json.containsKey("directDeals")) {
-      directDeals = [];
-      json["directDeals"].forEach((item) {
-        directDeals.add(new DirectDeal.fromJson(item));
-      });
+      directDeals = json["directDeals"].map((directDealsItem) => new DirectDeal.fromJson(directDealsItem)).toList();
     }
     if (json.containsKey("kind")) {
       kind = json["kind"];
@@ -577,10 +494,7 @@ class DirectDealsList {
     var output = new core.Map();
 
     if (directDeals != null) {
-      output["directDeals"] = new core.List();
-      directDeals.forEach((item) {
-        output["directDeals"].add(item.toJson());
-      });
+      output["directDeals"] = directDeals.map((directDealsItem) => directDealsItem.toJson()).toList();
     }
     if (kind != null) {
       output["kind"] = kind;
@@ -594,3 +508,16 @@ class DirectDealsList {
 
 }
 
+core.Map _mapMap(core.Map source, [core.Object convert(core.Object source) = null]) {
+  assert(source != null);
+  var result = new dart_collection.LinkedHashMap();
+  source.forEach((core.String key, value) {
+    assert(key != null);
+    if(convert == null) {
+      result[key] = value;
+    } else {
+      result[key] = convert(value);
+    }
+  });
+  return result;
+}

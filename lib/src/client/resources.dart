@@ -1,9 +1,11 @@
-part of adexchangebuyer_v1_api_client;
+part of adexchangebuyer_v1_api;
 
-class AccountsResource_ extends Resource {
+class AccountsResource_ {
 
-  AccountsResource_(Client client) : super(client) {
-  }
+  final Client _client;
+
+  AccountsResource_(Client client) :
+      _client = client;
 
   /**
    * Gets one account by ID.
@@ -138,10 +140,12 @@ class AccountsResource_ extends Resource {
   }
 }
 
-class CreativesResource_ extends Resource {
+class CreativesResource_ {
 
-  CreativesResource_(Client client) : super(client) {
-  }
+  final Client _client;
+
+  CreativesResource_(Client client) :
+      _client = client;
 
   /**
    * Gets the status for a single creative.
@@ -253,10 +257,12 @@ class CreativesResource_ extends Resource {
   }
 }
 
-class DirectDealsResource_ extends Resource {
+class DirectDealsResource_ {
 
-  DirectDealsResource_(Client client) : super(client) {
-  }
+  final Client _client;
+
+  DirectDealsResource_(Client client) :
+      _client = client;
 
   /**
    * Gets one direct deal by ID.

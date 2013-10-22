@@ -14,7 +14,7 @@ Adding dependency to pubspec.yaml
 
 ```
   dependencies:
-    google_adexchangebuyer_v1_api: '>=0.3.35'
+    google_adexchangebuyer_v1_api: '>=0.4.36'
 ```
 
 For web applications:

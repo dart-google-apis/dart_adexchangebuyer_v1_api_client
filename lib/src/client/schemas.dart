@@ -70,7 +70,7 @@ class Account {
   }
 
   /** Return String representation of Account */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -107,7 +107,7 @@ class AccountBidderLocation {
   }
 
   /** Return String representation of AccountBidderLocation */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -145,7 +145,7 @@ class AccountsList {
   }
 
   /** Return String representation of AccountsList */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -187,6 +187,9 @@ class Creative {
 
   /** Detected product categories, if any. Read-only. This field should not be set in requests. */
   core.List<core.int> productCategories;
+
+  /** All restricted categories for the ads that may be shown from this snippet. */
+  core.List<core.int> restrictedCategories;
 
   /** Detected sensitive categories, if any. Read-only. This field should not be set in requests. */
   core.List<core.int> sensitiveCategories;
@@ -240,6 +243,9 @@ class Creative {
     }
     if (json.containsKey("productCategories")) {
       productCategories = json["productCategories"].toList();
+    }
+    if (json.containsKey("restrictedCategories")) {
+      restrictedCategories = json["restrictedCategories"].toList();
     }
     if (json.containsKey("sensitiveCategories")) {
       sensitiveCategories = json["sensitiveCategories"].toList();
@@ -298,6 +304,9 @@ class Creative {
     if (productCategories != null) {
       output["productCategories"] = productCategories.toList();
     }
+    if (restrictedCategories != null) {
+      output["restrictedCategories"] = restrictedCategories.toList();
+    }
     if (sensitiveCategories != null) {
       output["sensitiveCategories"] = sensitiveCategories.toList();
     }
@@ -318,7 +327,7 @@ class Creative {
   }
 
   /** Return String representation of Creative */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -365,7 +374,7 @@ class CreativesList {
   }
 
   /** Return String representation of CreativesList */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -466,7 +475,7 @@ class DirectDeal {
   }
 
   /** Return String representation of DirectDeal */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -504,7 +513,7 @@ class DirectDealsList {
   }
 
   /** Return String representation of DirectDealsList */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 

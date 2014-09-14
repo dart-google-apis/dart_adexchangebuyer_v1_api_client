@@ -6,7 +6,8 @@ import 'package:google_adexchangebuyer_v1_api/src/console_client.dart';
 
 import "package:google_adexchangebuyer_v1_api/adexchangebuyer_v1_api_client.dart";
 
-/** Lets you manage your Ad Exchange Buyer account. */
+/** Accesses your bidding-account information, submits creatives for validation, finds available direct deals, and retrieves performance reports. */
+@deprecated
 class Adexchangebuyer extends Client with ConsoleClient {
 
   /** OAuth Scope2: Manage your Ad Exchange buyer account configuration */

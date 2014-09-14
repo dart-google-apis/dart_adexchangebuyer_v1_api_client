@@ -10,7 +10,6 @@ abstract class Client extends ClientBase {
 
   AccountsResource_ get accounts => new AccountsResource_(this);
   CreativesResource_ get creatives => new CreativesResource_(this);
-  DirectDealsResource_ get directDeals => new DirectDealsResource_(this);
 
   //
   // Parameters
